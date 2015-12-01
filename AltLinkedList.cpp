@@ -91,6 +91,50 @@
 		}
 		
 	}
+	
+	void delData(int d){
+		Node *temp, *del;
+		int count=0, flag=0;
+		temp = start;
+		while(temp){
+			if (temp->data == d){
+			   if(temp == start){
+			   	flag = 10;
+				start = temp->next;
+				delete(temp);
+				//temp = start;
+			   }
+			   else{
+				del->next = temp->next;
+				delete(temp);
+				temp = del;
+			   }
+				count++;
+			}	
+			if(flag){
+				temp = start;
+				flag = 0;
+			}
+			else{
+			del = temp;
+			temp = temp->next;
+			}
+		}
+		if(!count)
+			cout << "\nNot found\n";
+	}
+	
+	~List(){
+		Node *temp;
+		while(temp){
+			temp = start->next;
+			delete(start);
+			start = temp;
+		}
+	
+		delete(temp);
+
+		}
 
  };
 
@@ -100,7 +144,7 @@
 	i=10;	
 	while(i){
 		cout << "\n-----------------------------------------------------------------------" << endl;
-		cout << "\t1) Add elements\n\t2) Add element at Position\n\t3) Display\n\t4) Delete\n\t5) Delete at position\n\tAny other number to exit" << endl;
+		cout << "\t1) Add elements\n\t2) Add element at Position\n\t3) Display\n\t4) Delete\n\t5) Delete at position\n\t6) Delete according to data\n\tAny other number to exit" << endl;
 		cout << "------------------------------------------------------------------------" << endl;
 		cout << "\n\tEnter Choice: " ;
 		cin >> choice;
@@ -116,7 +160,7 @@
 			one.add(d,pos);
 			break;
 		  case 3:
-			cout << "\n************Linked List Data**************\n";
+			cout << "\n**********Linked List Data************\n";
 			one.disp();
 			break;
 		  case 4:
@@ -126,6 +170,11 @@
 			cout << "\nEnter the position: ";
 			cin >> pos;
 			one.del(pos);
+			break;
+		  case 6:
+			cout << "\nEnter the data to be searched and deleted: ";
+			cin >> d;
+			one.delData(d);
 			break;
 		  default:
 			i=0;
