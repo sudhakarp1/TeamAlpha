@@ -24,11 +24,15 @@ int LoopInput(List &);
 	//LoopInput(one);
 	two = one;
 	two.disp();
-/*	{
 	List three;
-	three = two;
+	//three = two;
+	three.add(140);
+	three.add(130);
+	three.add(120);
+	three.add(110);
 	three.disp();
-	}*/
+	three = three;	
+	three.disp();
 //	two.disp();
 	return 0;
  }

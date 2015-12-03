@@ -32,6 +32,7 @@ class List{
 	void del();
 	void del(int);
 	void delData(int);
+	void delAll(Node*);
 
 	~List();
 }; 
