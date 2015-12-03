@@ -44,7 +44,16 @@ void List::add(int d, int pos){
 		New->data = d;	
 	}
 }
-		
+	
+
+void List::addArray(int *arrStart, int *arrEnd){
+	Node *New = new Node();
+	if(start == 0){
+	  start = *arrStart;
+	  
+	  
+}
+	
 void List::disp(){
 	Node *temp = start;
 	while(temp){
@@ -87,16 +96,13 @@ List::List(const List &obj){
 }
 
 List& List::operator =(const List &obj){
-	Node* New = new Node;
-	Node* start = New;
-	New->next = NULL;
 	Node* temp = obj.start;
-	Node* tmp = start;
+	Node* tmp = start = new Node(*obj.start);
+	if(temp ) temp = temp->next;
 	while(temp){
-	   Node* New = new Node;   
-	   New->data = temp->data;
+	   tmp->next = new Node(*temp);
+	   tmp = tmp->next;
 	   temp = temp->next;
-	   tmp->next = New;
 	}
 
 	return *this;

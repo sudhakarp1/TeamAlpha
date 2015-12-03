@@ -12,6 +12,8 @@ using namespace std;
 struct Node{
 	int data;
 	Node *next;  
+	Node(int x=0):data(x),next(0){ }
+	Node(const Node &rhs):data(rhs.data),next(0){}
 };
 
 class List{

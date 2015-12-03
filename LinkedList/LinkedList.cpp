@@ -16,7 +16,12 @@ int LoopInput(List &);
  int main(){
  	List one;
 	List two;
-	LoopInput(one);
+	one.add(40);
+	one.add(30);
+	one.add(20);
+	one.add(10);
+	one.disp();
+	//LoopInput(one);
 	two = one;
 	two.disp();
 /*	{
@@ -24,6 +29,6 @@ int LoopInput(List &);
 	three = two;
 	three.disp();
 	}*/
-	two.disp();
+//	two.disp();
 	return 0;
  }
