@@ -66,6 +66,7 @@ void List::disp(){
 
 List::~List(){
 	Node *temp;
+	temp = start;
 	while(temp){
 		temp = start->next;
 		delete(start);
@@ -122,6 +123,7 @@ void List::delAll(Node* start){
 		temp = start->next;
 		delete(start);
 		start = temp;
+	cout << "Deleted" << endl;
 	}
 	delete(temp);
 }

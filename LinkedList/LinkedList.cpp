@@ -20,12 +20,13 @@ int LoopInput(List &);
 	one.add(30);
 	one.add(20);
 	one.add(10);
-	one.disp();
+	//one.disp();
 	//LoopInput(one);
 	two = one;
 	two.disp();
+	
 	List three;
-	//three = two;
+	three = two;
 	three.add(140);
 	three.add(130);
 	three.add(120);
@@ -33,6 +34,7 @@ int LoopInput(List &);
 	three.disp();
 	three = three;	
 	three.disp();
-//	two.disp();
+
+	one = two;
 	return 0;
  }

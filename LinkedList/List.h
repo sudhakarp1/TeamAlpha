@@ -14,6 +14,7 @@ struct Node{
 	Node *next;  
 	Node(int x=0):data(x),next(0){ }
 	Node(const Node &rhs):data(rhs.data),next(0){}
+//	~Node(){ delete[] next; }
 };
 
 class List{
@@ -33,6 +34,7 @@ class List{
 	void del(int);
 	void delData(int);
 	void delAll(Node*);
+	void addArray(int *arrStart, int *arrEnd);
 
 	~List();
 }; 
