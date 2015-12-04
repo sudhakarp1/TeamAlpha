@@ -16,25 +16,18 @@ int LoopInput(List &);
  int main(){
  	List one;
 	List two;
-	one.add(40);
-	one.add(30);
-	one.add(20);
-	one.add(10);
-	//one.disp();
-	//LoopInput(one);
+	LoopInput(one);
 	two = one;
 	two.disp();
 	
+	int *arrStart, *arrEnd;
+	int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+	arrStart = arr;
+	arrEnd = arrStart + (sizeof(arr)/4) - 1;
 	List three;
-	three = two;
-	three.add(140);
-	three.add(130);
-	three.add(120);
-	three.add(110);
-	three.disp();
-	three = three;	
-	three.disp();
 
-	one = two;
+	//three.addArray(arrStart, arrEnd);
+	//three.disp();		
+
 	return 0;
  }

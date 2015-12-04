@@ -34,7 +34,7 @@ class List{
 	void del(int);
 	void delData(int);
 	void delAll(Node*);
-	void addArray(int *arrStart, int *arrEnd);
+	List addArray(int*, int*);
 
 	~List();
 }; 

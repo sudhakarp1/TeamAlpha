@@ -46,13 +46,6 @@ void List::add(int d, int pos){
 }
 	
 
-/*void List::addArray(int *arrStart, int *arrEnd){
-	Node *New = new Node();
-	if(start == 0){
-	  start = *arrStart;
-	  
-	  
-}*/
 	
 void List::disp(){
 	Node *temp = start;
@@ -98,7 +91,6 @@ List::List(const List &obj){
 
 List& List::operator =(const List &obj){
 	if(start == obj.start){
-	   cout << "Executed" << endl;
  	   return *this;
 	}
 	else{
@@ -123,7 +115,6 @@ void List::delAll(Node* start){
 		temp = start->next;
 		delete(start);
 		start = temp;
-	cout << "Deleted" << endl;
 	}
 	delete(temp);
 }
@@ -180,4 +171,17 @@ void List::delData(int d){
 		cout << "\nNot found\n";
 }
 
+
+List List::addArray(int *arrStart, int *arrEnd){
+	Node *New = new Node(*arrStart);
+	Node* temp = start = New;
+	int len = arrEnd-arrStart;
+	for (int i=1; i<=len-2; i++){
+		Node *New = new Node(*arrStart);
+		arrStart++;
+		temp->next = New;
+		temp = temp->next;
+	}
+	return *this;
+}
 
